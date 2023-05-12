@@ -8,6 +8,7 @@ public class OnlineShoppingProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineShoppingProjectApplication.class, args);
+		System.out.println("this is demo");
 	}
 
 }
