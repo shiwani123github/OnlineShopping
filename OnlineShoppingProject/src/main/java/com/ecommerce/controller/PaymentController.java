@@ -26,7 +26,6 @@ public class PaymentController {
 	public Payment updatePayment(@RequestBody Payment payment) {
 		Payment pay = paymentService.updatePayment(payment);
 		return pay;
-
 	}
 
 }
