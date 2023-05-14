@@ -34,4 +34,10 @@ public class PaymentServiceImpl implements PaymentService {
 		return pay;
 	}
 
+	@Override
+	public void deleteById(Integer id) {
+		paymentRepository.deleteById(id);
+		
+	}
+
 }
