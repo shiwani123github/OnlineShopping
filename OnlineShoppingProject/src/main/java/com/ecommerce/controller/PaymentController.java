@@ -17,19 +17,7 @@ public class PaymentController {
 	@Autowired
 	private PaymentService paymentService;
 
-	@PostMapping("/savePayment")
-	public ResponseEntity<Payment> savePayment(@RequestBody Payment payment) {
-		Payment pay = paymentService.savePayment(payment);
-		return ResponseEntity.ok().body(pay);
-
-	}
-
-	@PutMapping("/updatePayment")
-	public Payment updatePayment(@RequestBody Payment payment) {
-		Payment pay = paymentService.updatePayment(payment);
-		return pay;
-
-	}
+	
 	@DeleteMapping("/deletePayment/{id}")
 public void deletePaymentById(@PathVariable("id") Integer id) {
 	 paymentService.deleteById(id);

@@ -1,9 +1,6 @@
 package com.ecommerce.service;
 
-import com.ecommerce.model.Payment;
-
-public interface PaymentService {
+public interface OrderService {
 	
 	public void deleteById(Integer id);
-
 }
