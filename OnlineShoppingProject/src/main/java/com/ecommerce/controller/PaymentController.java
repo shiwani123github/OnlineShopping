@@ -2,6 +2,8 @@ package com.ecommerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,18 +16,11 @@ import com.ecommerce.service.PaymentService;
 public class PaymentController {
 	@Autowired
 	private PaymentService paymentService;
-
-	@PostMapping("/savePayment")
-	public ResponseEntity<Payment> savePayment(@RequestBody Payment payment) {
-		Payment pay = paymentService.savePayment(payment);
+	
+	@GetMapping("/get/{id}")
+	public ResponseEntity<Payment> getPaymentById(@PathVariable("id") Integer id) {
+		Payment pay = paymentService.getPaymentById(id);
 		return ResponseEntity.ok().body(pay);
-
+		
 	}
-
-	@PutMapping("/updatePayment")
-	public Payment updatePayment(@RequestBody Payment payment) {
-		Payment pay = paymentService.updatePayment(payment);
-		return pay;
-	}
-
 }
