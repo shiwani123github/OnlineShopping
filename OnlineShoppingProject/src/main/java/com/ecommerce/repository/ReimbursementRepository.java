@@ -5,9 +5,8 @@ import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ecommerce.model.Order;
-
+import com.ecommerce.model.Reimbursement;
 @Repository
-public interface OrderRepository extends CrudRepository<Order, Serializable> {
-
+public interface ReimbursementRepository extends CrudRepository<Reimbursement , Serializable>{
+	public Reimbursement findById(Integer id);
 }

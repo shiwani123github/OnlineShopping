@@ -12,9 +12,8 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-
-@DeleteMapping("/deleteOrder/{id}")
-public void deleteOrderById(@PathVariable("id") Integer id) {
-	 orderService.deleteById(id);
-}
+	@DeleteMapping("/deleteOrder/{id}")
+	public void deleteOrderById(@PathVariable("id") Integer id) {
+		orderService.deleteById(id);
+	}
 }

@@ -7,13 +7,12 @@ import com.ecommerce.repository.RewardRepository;
 import com.ecommerce.service.RewardService;
 
 @Service
-    
-    public class RewardServiceImpl implements RewardService {
+public class RewardServiceImpl implements RewardService {
 	@Autowired
 	private RewardRepository rewardRepository;
 
 	@Override
 	public void deleteById(Integer id) {
-		
+		rewardRepository.deleteById(id);
 	}
 }

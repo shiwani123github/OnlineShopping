@@ -7,13 +7,12 @@ import com.ecommerce.repository.OrderRepository;
 import com.ecommerce.service.OrderService;
 
 @Service
-
 public class OrderServiceImpl implements OrderService {
-@Autowired
-private OrderRepository orderRepository;
+	@Autowired
+	private OrderRepository orderRepository;
 
-@Override
-public void deleteById(Integer id) {
-	
-}
+	@Override
+	public void deleteById(Integer id) {
+		orderRepository.deleteById(id);
+	}
 }
