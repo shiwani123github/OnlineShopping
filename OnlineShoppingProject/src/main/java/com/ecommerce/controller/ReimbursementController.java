@@ -13,7 +13,7 @@ import com.ecommerce.model.Reimbursement;
 import com.ecommerce.service.ReimbursementService;
 
 @RestController
-@RequestMapping("/reimbursement")
+//@RequestMapping("/reimbursement")
 public class ReimbursementController {
 	
 	@Autowired

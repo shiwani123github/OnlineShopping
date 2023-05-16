@@ -14,7 +14,7 @@ import com.ecommerce.model.Reward;
 import com.ecommerce.service.RewardService;
 
 @RestController
-//@RequestMapping("/reward")
+@RequestMapping("/reward")
 public class RewardController {
 	
 	// inject RewardService

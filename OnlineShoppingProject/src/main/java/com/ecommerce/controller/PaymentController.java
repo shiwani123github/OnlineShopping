@@ -21,6 +21,5 @@ public class PaymentController {
 	public ResponseEntity<Payment> getPaymentById(@PathVariable("id") Integer id) {
 		Payment pay = paymentService.getPaymentById(id);
 		return ResponseEntity.ok().body(pay);
-		
-	}
+		}
 }
