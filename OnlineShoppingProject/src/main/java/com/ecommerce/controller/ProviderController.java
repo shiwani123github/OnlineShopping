@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.model.Provider;
 import com.ecommerce.service.ProviderService;
 @RestController
-@RequestMapping("/provider")
+//@RequestMapping("/provider")
 public class ProviderController {
 	
 	@Autowired
