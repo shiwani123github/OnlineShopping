@@ -19,6 +19,8 @@ public class Product {
 	private int prize;
 	private int quantity;
 	private int stock;
+	private Integer userId;
+	private Integer category_Id;
 
 	public int getId() {
 		return id;
@@ -74,6 +76,22 @@ public class Product {
 
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Integer getCategory_Id() {
+		return category_Id;
+	}
+
+	public void setCategory_Id(Integer category_Id) {
+		this.category_Id = category_Id;
 	}
 
 }

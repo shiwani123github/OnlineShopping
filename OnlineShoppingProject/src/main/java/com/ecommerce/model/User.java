@@ -3,6 +3,7 @@ package com.ecommerce.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,8 @@ public class User {
 	private List<Order> orderList;
 	@OneToMany(mappedBy = "userId")
 	private List<Address> addressList;
+	@OneToOne(targetEntity = Transection.class, cascade = CascadeType.ALL)
+	private Transection transection;
 
 	public int getId() {
 		return id;
@@ -98,6 +101,14 @@ public class User {
 
 	public void setAddressList(List<Address> addressList) {
 		this.addressList = addressList;
+	}
+
+	public Transection getTransection() {
+		return transection;
+	}
+
+	public void setTransection(Transection transection) {
+		this.transection = transection;
 	}
 
 }

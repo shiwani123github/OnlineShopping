@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.model.Address;
 import com.ecommerce.model.User;
 import com.ecommerce.model.UserWithOrder;
+import com.ecommerce.model.UserWithTransection;
 import com.ecommerce.service.AddressService;
 import com.ecommerce.service.UserService;
 
@@ -56,5 +57,24 @@ public class UserController {
 			addressService.saveAddress(address);
 		}
 		return user1;
+	}
+
+	@PostMapping("/saveUserTransection")
+	public User saveUser(@RequestBody User user) {
+		User users = userService.saveuser(user);
+
+		return users;
+
+	}
+
+	@GetMapping("/user/{id}")
+	public UserWithTransection getUserWithTransection(@PathVariable("id") Integer id) {
+		return userService.getUserWithTransection(id);
+
+	}
+
+	@DeleteMapping("/user/{id}/transection")
+	public void deleteUserWithSingleTransection(@PathVariable("id") Integer id) {
+		userService.deleteUserWithSingleTransection(id);
 	}
 }

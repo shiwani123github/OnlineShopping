@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.model.Order;
+import com.ecommerce.model.Transection;
 import com.ecommerce.model.User;
 import com.ecommerce.model.UserWithOrder;
+import com.ecommerce.model.UserWithTransection;
+import com.ecommerce.repository.TransectionRepository;
 import com.ecommerce.repository.UserRepository;
 import com.ecommerce.service.OrderService;
 import com.ecommerce.service.UserService;
@@ -18,6 +21,8 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private TransectionRepository transectionRepository;
 
 	@Override
 	public User saveUser(User user) {
@@ -71,6 +76,34 @@ public class UserServiceImpl implements UserService {
 		}
 		User user2 = userRepository.save(user1);
 		return user2;
+	}
+
+	@Override
+	public UserWithTransection getUserWithTransection(Integer id) {
+		User user = userRepository.findById(id).orElse(null);
+		if (user != null) {
+			Transection transection = user.getTransection();
+			UserWithTransection userWithTransection = new UserWithTransection();
+			userWithTransection.setUser(user);
+			userWithTransection.setTransection(transection);
+			return userWithTransection;
+		}
+		return null;
+	}
+
+	@Override
+	public void deleteUserWithSingleTransection(Integer id) {
+		User user = userRepository.findById(id).orElse(null);
+		if (user != null && user.getTransection() != null) {
+			Transection transection = user.getTransection();
+			userRepository.delete(user);
+		}
+	}
+
+	@Override
+	public User saveuser(User user) {
+		User users = userRepository.save(user);
+		return users;
 	}
 
 }
