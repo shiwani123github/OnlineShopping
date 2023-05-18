@@ -1,18 +1,23 @@
 package com.ecommerce.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.model.Address;
 import com.ecommerce.model.User;
 import com.ecommerce.model.UserWithOrder;
+import com.ecommerce.service.AddressService;
 import com.ecommerce.service.UserService;
 
 @RestController
@@ -20,6 +25,8 @@ import com.ecommerce.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private AddressService addressService;
 
 	@GetMapping("/user/{id}")
 	public UserWithOrder getUserWithOrder(@PathVariable("id") Integer id) {
@@ -40,4 +47,14 @@ public class UserController {
 
 	}
 
+	@PostMapping("/saveUser")
+	public User saveUserAddress(@RequestBody User user) {
+		User user1 = userService.saveUser(user);
+		List<Address> addresses = user.getAddressList();
+		for (Address address : addresses) {
+			address.setUserId(user.getId());// 1
+			addressService.saveAddress(address);
+		}
+		return user1;
+	}
 }

@@ -25,6 +25,8 @@ public class User {
 	private String userType;
 	@OneToMany(mappedBy = "userId")
 	private List<Order> orderList;
+	@OneToMany(mappedBy = "userId")
+	private List<Address> addressList;
 
 	public int getId() {
 		return id;
@@ -88,6 +90,14 @@ public class User {
 
 	public void setOrderList(List<Order> orderList) {
 		this.orderList = orderList;
+	}
+
+	public List<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
 	}
 
 }
