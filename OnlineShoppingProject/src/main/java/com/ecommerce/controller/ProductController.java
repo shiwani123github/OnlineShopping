@@ -14,7 +14,7 @@ import com.ecommerce.model.Product;
 import com.ecommerce.service.ProductService;
 
 @RestController
-@RequestMapping("/product")
+//@RequestMapping("/product")
 public class ProductController {
 	
 	// inject the productService object
