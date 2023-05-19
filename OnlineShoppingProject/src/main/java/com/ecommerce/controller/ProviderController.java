@@ -32,7 +32,7 @@ public class ProviderController {
 
 	}
 
-	@GetMapping("/get/{id}")
+	@GetMapping("/getProvider/{id}")
 	public ResponseEntity<Provider> getProviderById(@PathVariable("id") Integer id) {
 		Provider provider = providerService.getProviderById(id);
 		return ResponseEntity.ok().body(provider);

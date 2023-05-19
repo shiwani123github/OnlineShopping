@@ -13,7 +13,7 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 	private ReimbursementRepository reimbursementRepository;
 
 	@Override
-	public Reimbursement getReimbursementtById(Integer id) {
+	public Reimbursement getReimbursementById(Integer id) {
 		Reimbursement rei = reimbursementRepository.findById(id).get();
 		return rei;
 

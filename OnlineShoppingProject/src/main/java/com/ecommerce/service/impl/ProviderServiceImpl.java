@@ -28,7 +28,7 @@ public class ProviderServiceImpl implements ProviderService {
 		provider_1.setPhone(provider_1.getPhone());
 		provider_1.setAddress(provider_1.getAddress());
 		provider_1.setFax(provider_1.getFax());
-		provider_1.setDescribe(provider_1.getDescribe());
+		provider_1.setDescribes(provider_1.getDescribes());
 		provider_1.setCreateDate(provider_1.getCreateDate());
 		Provider provider_2 = providerRepository.save(provider_1);
 		return provider_2;

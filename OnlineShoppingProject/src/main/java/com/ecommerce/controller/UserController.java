@@ -29,13 +29,13 @@ public class UserController {
 	@Autowired
 	private AddressService addressService;
 
-	@GetMapping("/user/{id}")
+	@GetMapping("/userWithOrder/{id}")
 	public UserWithOrder getUserWithOrder(@PathVariable("id") Integer id) {
 		return userService.getUserWithOrder(id);
 
 	}
 
-	@DeleteMapping("/user/{id}/product")
+	@DeleteMapping("/userProduct/{id}/product")
 	public ResponseEntity<String> deleteUserProduct(@PathVariable("id") Integer id) {
 		userService.deleteUserWithProduct(id);
 		return ResponseEntity.ok("user deleted successfully with its products...");
@@ -67,7 +67,7 @@ public class UserController {
 
 	}
 
-	@GetMapping("/user/{id}")
+	@GetMapping("/userTransection/{id}")
 	public UserWithTransection getUserWithTransection(@PathVariable("id") Integer id) {
 		return userService.getUserWithTransection(id);
 

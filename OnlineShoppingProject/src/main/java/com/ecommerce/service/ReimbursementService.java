@@ -3,7 +3,7 @@ package com.ecommerce.service;
 import com.ecommerce.model.Reimbursement;
 
 public interface ReimbursementService {
-	public Reimbursement getReimbursementtById(Integer id);
+	public Reimbursement getReimbursementById(Integer id);
 
 	public Reimbursement updateReimbursement(Reimbursement reimbursement);
 

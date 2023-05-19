@@ -21,7 +21,7 @@ public class Provider {
 	private String phone;
 	private String address;
 	private String fax;
-	private String describe;
+	private String describes;
 	private Date createDate;
 
 	public Integer getPid() {
@@ -80,12 +80,12 @@ public class Provider {
 		this.fax = fax;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getDescribes() {
+		return describes;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setDescribes(String describes) {
+		this.describes = describes;
 	}
 
 	public Date getCreateDate() {

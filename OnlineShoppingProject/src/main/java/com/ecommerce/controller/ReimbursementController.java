@@ -33,9 +33,9 @@ public class ReimbursementController {
 
 	}
 
-	@GetMapping("/get/{id}")
+	@GetMapping("/getReimbursement/{id}")
 	public ResponseEntity<Reimbursement> getReimbursementById(@PathVariable("id") Integer id) {
-		Reimbursement rei = reimbursementService.getReimbursementtById(id);
+		Reimbursement rei = reimbursementService.getReimbursementById(id);
 		return ResponseEntity.ok().body(rei);
 	}
 
