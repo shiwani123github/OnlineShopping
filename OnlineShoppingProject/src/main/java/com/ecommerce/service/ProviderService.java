@@ -11,4 +11,6 @@ public interface ProviderService {
 
 	public void deleteById(Integer id);
 
+	public Provider updateBillByProviderId(Provider provider);
+
 }

@@ -1,11 +1,13 @@
 package com.ecommerce.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,8 @@ public class Provider {
 	private String fax;
 	private String describes;
 	private Date createDate;
+	@OneToMany(mappedBy = "pid")
+	private List<Bill> billList;
 
 	public Integer getPid() {
 		return pid;
@@ -96,4 +100,11 @@ public class Provider {
 		this.createDate = createDate;
 	}
 
+	public List<Bill> getBillList() {
+		return billList;
+	}
+
+	public void setBillList(List<Bill> billList) {
+		this.billList = billList;
+	}
 }
