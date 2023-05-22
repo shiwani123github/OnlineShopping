@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+ * @Auther SHiwani Dewang
+ */
 @Entity
 @Table(name = "feedback")
 public class Feedback {

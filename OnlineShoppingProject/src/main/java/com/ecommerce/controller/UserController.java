@@ -29,6 +29,9 @@ public class UserController {
 	@Autowired
 	private AddressService addressService;
 
+	/*
+	 * @Auther Balraj Naik
+	 */
 	@GetMapping("/userWithOrder/{id}")
 	public UserWithOrder getUserWithOrder(@PathVariable("id") Integer id) {
 		return userService.getUserWithOrder(id);
@@ -41,6 +44,9 @@ public class UserController {
 		return ResponseEntity.ok("user deleted successfully with its products...");
 	}
 
+	/*
+	 * @Auther Vikas Koli
+	 */
 	@PutMapping("/updateUserProduct")
 	public User updateUserWithProduct(@RequestBody User user) {
 		User user3 = userService.updateUserWithProduct(user);
@@ -67,6 +73,9 @@ public class UserController {
 
 	}
 
+	/*
+	 * @Auther shiwani Dewang
+	 */
 	@GetMapping("/userTransection/{id}")
 	public UserWithTransection getUserWithTransection(@PathVariable("id") Integer id) {
 		return userService.getUserWithTransection(id);

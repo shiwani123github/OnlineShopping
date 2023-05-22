@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.model.Product;
 import com.ecommerce.service.ProductService;
 
+/*
+ * @auther shiwani dewang
+ */
 @RestController
-@RequestMapping("/Provider")
+@RequestMapping("/Product")
 public class ProductController {
 	@Autowired
 	private ProductService productService;

@@ -5,14 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.model.Category;
 import com.ecommerce.model.Product;
 import com.ecommerce.service.CategoryService;
 import com.ecommerce.service.ProductService;
-
+/*
+ * @Auther shiwani dewang
+ */
 @RestController
+@RequestMapping("/CategoryProduct")
 public class CategoryProductController {
 	@Autowired
 	private CategoryService categoryService;

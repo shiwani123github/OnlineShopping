@@ -3,12 +3,12 @@ package com.ecommerce.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ecommerce.model.Feedback;
+import com.ecommerce.model.BankAccount;
 
 /*
- * @Auther shiwani Dewang
+ * @ATher Balraj Naik
  */
 @Repository
-public interface FeedbackRepository extends JpaRepository<Feedback, Integer> {
+public interface BankAccountRepository extends JpaRepository<BankAccount, Integer> {
 
 }

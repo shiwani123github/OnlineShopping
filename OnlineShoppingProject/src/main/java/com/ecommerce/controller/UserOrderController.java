@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.model.Order;
@@ -13,12 +14,16 @@ import com.ecommerce.service.OrderService;
 import com.ecommerce.service.UserService;
 
 @RestController
+@RequestMapping("/userOrder")
 public class UserOrderController {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private OrderService orderService;
 
+	/*
+	 * @Auther Balraj Naik
+	 */
 	@PostMapping("/saveUserProduct")
 	public User saveUserProduct(@RequestBody User user) {
 		User user1 = userService.saveUser(user);

@@ -8,4 +8,6 @@ public interface AddressService {
 	public Address saveAddress(Address address);
 
 	public List<Address> getAddressByUserId(Integer id);
+
+	public void deleteById(Integer id);
 }

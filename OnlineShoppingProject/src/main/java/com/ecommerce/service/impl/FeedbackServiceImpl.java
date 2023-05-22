@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import com.ecommerce.model.Feedback;
 import com.ecommerce.repository.FeedbackRepository;
 import com.ecommerce.service.FeedbackService;
-
+/*
+ * @auther shiwani dewang
+ */
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
 	@Autowired
