@@ -1,5 +1,7 @@
 package com.ecommerce.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import com.ecommerce.service.CartService;
 @RestController
 @RequestMapping("/Cart")
 public class CartController {
+	private static final Logger logger = LoggerFactory.getLogger(CartController.class);
 	@Autowired
 	private CartService cartService;
 
@@ -23,6 +26,7 @@ public class CartController {
 	 */
 	@PostMapping("/saveCart")
 	public ResponseEntity<Cart> saveCart(@RequestBody Cart cart) {
+		logger.info("In cart controller");
 		Cart cart_1 = cartService.saveCart(cart);
 		return ResponseEntity.ok().body(cart_1);
 

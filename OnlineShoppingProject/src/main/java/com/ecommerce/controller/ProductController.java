@@ -1,5 +1,7 @@
 package com.ecommerce.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,11 +22,13 @@ import com.ecommerce.service.ProductService;
 @RestController
 @RequestMapping("/Product")
 public class ProductController {
+	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	@Autowired
 	private ProductService productService;
 
 	@PostMapping("/saveProduct")
 	public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
+		logger.info("In product controller");
 		Product product_1 = productService.saveProduct(product);
 		return ResponseEntity.ok().body(product_1);
 	}

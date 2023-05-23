@@ -19,6 +19,7 @@ public class Cart {
 	private String title;
 	private int quantity;
 	private double price;
+	private String productName;
 
 	public int getCartId() {
 		return cartId;
@@ -58,6 +59,14 @@ public class Cart {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 }

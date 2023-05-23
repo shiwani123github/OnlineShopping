@@ -1,5 +1,7 @@
 package com.ecommerce.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +18,7 @@ import com.ecommerce.service.RewardService;
 @RestController
 @RequestMapping("/Reward")
 public class RewardController {
+	private static final Logger logger = LoggerFactory.getLogger(RewardController.class);
 	@Autowired
 	private RewardService rewardService;
 
@@ -24,6 +27,7 @@ public class RewardController {
 	 */
 	@PostMapping("/saveReward")
 	public Reward saveReward(@RequestBody Reward reward) {
+		logger.info("in reward controller");
 		Reward reward_1 = rewardService.saveReward(reward);
 		return reward_1;
 	}

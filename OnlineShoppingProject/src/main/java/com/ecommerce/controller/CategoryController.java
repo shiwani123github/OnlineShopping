@@ -1,5 +1,7 @@
 package com.ecommerce.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,11 +22,13 @@ import com.ecommerce.service.CategoryService;
 @RestController
 @RequestMapping("/Update")
 public class CategoryController {
+	private static final Logger logger = LoggerFactory.getLogger(CategoryController.class);
 	@Autowired
 	private CategoryService categoryService;
 
 	@GetMapping("/category/{id}")
 	public CategoryWithProduct getCategoryWithProduct(@PathVariable("id") Integer id) {
+		logger.info("In category controller ");
 		return categoryService.getCategoryWithProduct(id);
 
 	}

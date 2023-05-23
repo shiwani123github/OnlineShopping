@@ -2,6 +2,8 @@ package com.ecommerce.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,16 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.model.UserRegistration;
 import com.ecommerce.service.UserRegistrationService;
+
 /*
  * @Auther shiwani Dewang 
  */
 @RestController
 @RequestMapping("/Rgistration")
 public class UserRegistrationController {
+	private static final Logger logger = LoggerFactory.getLogger(UserRegistrationController.class);
 	@Autowired
 	private UserRegistrationService userRegistrationService;
+
 	@PostMapping("/registerUser")
 	public UserRegistration registerUser(@RequestBody UserRegistration userRegistration) {
+		logger.info("In User registration class");
 		UserRegistration user = userRegistrationService.registerUser(userRegistration);
 		return user;
 
@@ -60,5 +66,3 @@ public class UserRegistrationController {
 
 	}
 }
-
-

@@ -1,5 +1,7 @@
 package com.ecommerce.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,14 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.model.Bill;
 import com.ecommerce.service.BillService;
 
+/*
+ * @Author shiwani Dewang 
+ */
 @RestController
 @RequestMapping("/Bill")
 public class BillController {
+	private static final Logger logger = LoggerFactory.getLogger(BillController.class);
 	@Autowired
 	private BillService billService;
 
 	@PostMapping("/addBill")
 	public ResponseEntity<Bill> addBill(@RequestBody Bill bill) {
+		logger.info("In bill controller class");
 		Bill bill3 = billService.addBillDetails(bill);
 		return ResponseEntity.ok().body(bill3);
 	}

@@ -23,4 +23,10 @@ public class CartServiceImpl implements CartService {
 		return cart;
 	}
 
+	@Override
+	public Cart calculateCartAmount(Integer id) {
+		
+		return null;
+	}
+
 }
