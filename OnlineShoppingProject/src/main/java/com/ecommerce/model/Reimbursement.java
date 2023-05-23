@@ -13,16 +13,28 @@ public class Reimbursement {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reimbursementId;
 	private double amount;
+	private int emplId;
+	private double amount;
+	private String submitDate;
 	private String type;
 	private String status;
 
-	public int getReimbursementId() {
+  public int getReimbursementId() {
 		return reimbursementId;
 	}
 
 	public void setReimbursementId(int reimbursementId) {
 		this.reimbursementId = reimbursementId;
 	}
+
+	public int getEmplId() {
+		return emplId;
+	}
+
+	public void setEmplId(int emplId) {
+		this.emplId = emplId;
+	}
+
 
 	public double getAmount() {
 		return amount;
@@ -31,6 +43,16 @@ public class Reimbursement {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+
+
+	public String getSubmitDate() {
+		return submitDate;
+	}
+
+	public void setSubmitDate(String submitDate) {
+		this.submitDate = submitDate;
+	}
+
 
 	public String getType() {
 		return type;
