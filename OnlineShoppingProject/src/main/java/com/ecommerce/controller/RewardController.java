@@ -43,7 +43,8 @@ public class RewardController {
 	}
 
 	@DeleteMapping("/deleteReward/{id}")
-	public void deleteRewardById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteRewardById(@PathVariable("id") Integer id) {
 		rewardService.deleteById(id);
+		return ResponseEntity.ok().body("Reward get deleted");
 	}
 }

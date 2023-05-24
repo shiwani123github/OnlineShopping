@@ -46,8 +46,9 @@ public class AddressController {
 	 * @auther vikas koli
 	 */
 	@DeleteMapping("/deleteAddress/{id}")
-	public void deleteAddressById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteAddressById(@PathVariable("id") Integer id) {
 		addressService.deleteById(id);
+		return ResponseEntity.ok().body("address get deleted successfully !");
 	}
 
 }

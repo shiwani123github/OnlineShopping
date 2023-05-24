@@ -87,7 +87,8 @@ public class UserController {
 	}
 
 	@DeleteMapping("/user/{id}/transection")
-	public void deleteUserWithSingleTransection(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteUserWithSingleTransection(@PathVariable("id") Integer id) {
 		userService.deleteUserWithSingleTransection(id);
+		return ResponseEntity.ok().body("transection get deleted");
 	}
 }

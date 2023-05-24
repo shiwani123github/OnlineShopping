@@ -40,8 +40,9 @@ public class BillController {
 	}
 
 	@DeleteMapping("/deleteBill/{bid}")
-	public void deleteBill(@PathVariable("bid") int id) {
+	public ResponseEntity<String> deleteBill(@PathVariable("bid") int id) {
 		billService.deleteBillDetails(id);
+		return ResponseEntity.ok().body("Bill get deleted successfully !");
 	}
 
 	@PutMapping("/updateBill/{id}")

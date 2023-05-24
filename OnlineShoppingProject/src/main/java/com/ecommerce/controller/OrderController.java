@@ -41,8 +41,9 @@ public class OrderController {
 	}
 
 	@DeleteMapping("/deleteProvider/{id}")
-	public void deleteProviderById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteOrderById(@PathVariable("id") Integer id) {
 		orderService.deleteById(id);
+		return ResponseEntity.ok().body("order get deleted successfully !");
 	}
 
 }

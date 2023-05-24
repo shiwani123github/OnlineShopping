@@ -52,8 +52,9 @@ public class ReimbursementController {
 	}
 
 	@DeleteMapping("/deleteReimbursement/{id}")
-	public void deleteReimbursementById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteReimbursementById(@PathVariable("id") Integer id) {
 		reimbursementService.deleteById(id);
+		return ResponseEntity.ok().body("Reimbursement get deleted successfully !");
 	}
 
 }

@@ -51,7 +51,8 @@ public class ProviderController {
 	}
 
 	@DeleteMapping("/deleteProvider/{id}")
-	public void deleteProviderById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteProviderById(@PathVariable("id") Integer id) {
 		providerService.deleteById(id);
+		return ResponseEntity.ok().body("Provider get deleted successfully");
 	}
 }

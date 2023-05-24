@@ -37,6 +37,9 @@ public class ProductController {
 	public Product updateProduct(@RequestBody Product product, @PathVariable("id") Integer id) {
 		return productService.updateProduct(product);
 	}
+	/*
+	 * @auther Balraj Naik
+	 */
 
 	@GetMapping("/get/{id}")
 	public ResponseEntity<Product> getProductById(@PathVariable("id") Integer id) {
@@ -45,8 +48,9 @@ public class ProductController {
 	}
 
 	@DeleteMapping("/deleteProduct/{id}")
-	public void deleteProductById(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> deleteProductById(@PathVariable("id") Integer id) {
 		productService.deleteById(id);
+		return ResponseEntity.ok().body("Product get deleted successfully ");
 	}
 
 }

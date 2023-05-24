@@ -16,9 +16,6 @@ import com.ecommerce.model.AddCart;
 import com.ecommerce.repository.AddCartRepository;
 import com.ecommerce.service.AddCartService;
 
-/*
-@Auther shiwani dewang
- */
 @RestController
 @RequestMapping("/AddCart")
 public class AddCartController {
@@ -29,6 +26,9 @@ public class AddCartController {
 
 	@Autowired
 	private AddCartRepository addCartRepository;
+	/*
+	 * @Auther shiwani dewang
+	 */
 
 	@PostMapping("/addProduct")
 	public ResponseEntity<AddCart> addToCart(@RequestBody AddCart addCart) {
@@ -44,6 +44,9 @@ public class AddCartController {
 		return addCart;
 
 	}
+	/*
+	 * @Vikas Koli
+	 */
 
 	@PutMapping("/updateCart/{id}")
 	public AddCart updateCartById(@PathVariable("id") Integer id, @RequestBody AddCart addCart) {
@@ -51,7 +54,8 @@ public class AddCartController {
 		return cart1;
 	}
 
-	public void deleteCartById(Integer id) {
+	public ResponseEntity<String> deleteCartById(Integer id) {
 		addCartService.deletedCartById(id);
+		return ResponseEntity.ok().body("cart deleted successfully ! ");
 	}
 }

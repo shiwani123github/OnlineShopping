@@ -28,7 +28,6 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 	public Reimbursement updateReimbursement(Reimbursement reimbursement) {
 		Integer id = reimbursement.getReimbursementId();
 		Reimbursement reimbursement_1 = reimbursementRepository.findById(id).get();
-		reimbursement_1.setEmplId(reimbursement_1.getEmplId());
 		reimbursement_1.setAmount(reimbursement_1.getAmount());
 		reimbursement_1.setType(reimbursement_1.getType());
 		reimbursement_1.setStatus(reimbursement_1.getStatus());

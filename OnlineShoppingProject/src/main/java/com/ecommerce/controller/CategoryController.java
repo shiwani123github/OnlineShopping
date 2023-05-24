@@ -32,6 +32,9 @@ public class CategoryController {
 		return categoryService.getCategoryWithProduct(id);
 
 	}
+	/*
+	 * @auther Balraj Naik
+	 */
 
 	@DeleteMapping("/category/{id}/product")
 	public ResponseEntity<String> deleteCategoryProduct(@PathVariable("id") Integer id) {

@@ -12,7 +12,6 @@ public class Reimbursement {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reimbursementId;
-	private int emplId;
 	private double amount;
 	private String type;
 	private String status;
@@ -23,14 +22,6 @@ public class Reimbursement {
 
 	public void setReimbursementId(int reimbursementId) {
 		this.reimbursementId = reimbursementId;
-	}
-
-	public int getEmplId() {
-		return emplId;
-	}
-
-	public void setEmplId(int emplId) {
-		this.emplId = emplId;
 	}
 
 	public double getAmount() {
